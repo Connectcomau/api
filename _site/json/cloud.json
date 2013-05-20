@@ -1,0 +1,22 @@
+{
+	"endpoints": [
+		{
+			"name": "List All Instances",
+			"method": "GET",
+			"url": "/cloud/instances",
+			"description": "Produces a list of all instances associated with the authenticated account.",
+			"parameters": null
+		},
+		{
+			"name": "Get Instance",
+			"method": "GET",
+			"url": "/cloud/instances",
+			"description": "Produces a list of all instances associated with the authenticated account.",
+			"parameters": null
+		}
+
+
+
+
+	]
+}

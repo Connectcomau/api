@@ -1,0 +1,13 @@
+<div id="left-nav" class="span3">
+	<ul>
+		{% if page.is_main_page %}
+			<a href="./uploads"><li>Uploads<i class="icon-chevron-right pull-right"></i></li></a>
+			<a href="./folders"><li>Folders<i class="icon-chevron-right pull-right"></i></li></a>
+			<a href="./transcoding"><li>Transcoding<i class="icon-chevron-right pull-right"></i></li></a>
+		{% else %}
+			<a href="../uploads"><li>Uploads<i class="icon-chevron-right pull-right"></i></li></a>
+			<a href="../folders"><li>Folders<i class="icon-chevron-right pull-right"></i></li></a>
+			<a href="../transcoding"><li>Transcoding<i class="icon-chevron-right pull-right"></i></li></a>
+		{% endif %}
+	</ul>
+</div>

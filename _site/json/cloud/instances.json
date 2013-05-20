@@ -1,0 +1,33 @@
+{
+	"endpoints": [
+		{
+			"name": "List All Instances",
+			"method": "GET",
+			"url": "/cloud/instances",
+			"description": "Produces a list of all instances associated with the authenticated account.",
+			"parameters": null,
+			"examples": {
+				"request": null,
+				"response": {
+					"blowfish": "test"
+				}
+			}
+		},
+		{
+			"name": "Get Instance",
+			"method": "GET",
+			"url": "/cloud/instances/:id",
+			"description": "Produces the details associated with a given instance ID.",
+			"parameters": [
+				{
+					"name": "id",
+					"description": "ID of the instance you wish to retrieve"
+				}
+			],
+			"examples": {
+				"request": null,
+				"response": null
+			}
+		}
+	]
+}
