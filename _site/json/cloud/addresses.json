@@ -1,0 +1,98 @@
+{
+	"endpoints": [
+		{
+			"name": "List All Addresses",
+			"method": "GET",
+			"url": "/cloud/addresses",
+			"description": "Produces a list of all addresses associated with the authenticated account.",
+			"parameters": null,
+			"examples": {
+				"request": null,
+				"response": null
+			}
+		},
+		{
+			"name": "Get Addresses",
+			"method": "GET",
+			"url": "/cloud/addresses/:id",
+			"description": "Produces the details of a given addresses.",
+			"parameters": [
+				{
+					"name": "id",
+					"description": "The id of the address you wish to retrieve."
+				}
+			],
+			"examples": {
+				"request": null,
+				"response": null
+			}
+		},
+		{
+			"name": "Delete Address",
+			"method": "DELETE",
+			"url": "/cloud/addresses/:id",
+			"description": "Produces the details of a given addresses.",
+			"parameters": [
+				{
+					"name": "id",
+					"description": "The id of the address you wish to delete."
+				}
+			],
+			"examples": {
+				"request": null,
+				"response": {"message":"address deleted"}
+			}
+		},
+		{
+			"name": "Create Address",
+			"method": "POST",
+			"url": "/cloud/addresses/:id",
+			"description": "Produces the details of a given addresses.",
+			"parameters": null,
+			"examples": {
+				"request": null,
+				"response": {"message":"address created","address":{"address":{"id":"0c083b8a-3046-4b70-8778-3130fab4f301","address":"203.111.84.13","allocated":false}}}
+			}
+		},
+		{
+			"name": "Attach Address To Instance",
+			"method": "PUT",
+			"url": "/cloud/instances/:instance_id/addresses/:address_id",
+			"description": "Attach an existing address to an instance.",
+			"parameters": [
+				{
+					"name": "instance_id",
+					"description": "The ID you wish to attach to."
+				},
+				{
+					"name": "address_id",
+					"description": "The ID of the address you wish to attach"
+				}
+			],
+			"examples": {
+				"request": null,
+				"response": {"message":"address attached","instance":{"id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","memory":1024,"license":null,"name":"test00.server.com","state":"stopped","interface_ids":["90fbb8e4-8f2e-4fec-a669-cab005f9ff02","4620070d-4fc0-43b7-8efd-2b17c2837382","132d8505-3a02-489e-9553-71dad20e89c1"],"key_pair_ids":[],"created_at":"2013-03-22T02:36:55Z","updated_at":"2013-05-21T00:40:28Z","volume_ids":["cd043d5f-514d-45fb-803d-84c01cc06e43"],"bootable":true,"volumes":[{"id":"cd043d5f-514d-45fb-803d-84c01cc06e43","name":"riak_ubuntu1204_546","target":0,"attach_type":"RW","state":"provisioned","instance_id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","mirror_count":2,"size":50,"created_at":"2013-03-22T02:36:55Z","updated_at":"2013-05-21T00:32:29Z","source":{"image":"ubuntu1204pvhvm","source_type":"TEMPLATE"}}],"addresses":[{"id":"1f3f6e2c-5cad-4c78-b9f5-d073d27559c3","address":"203.111.84.194","allocated":true},{"id":"18d062e0-99f2-44eb-8bae-1210b8c64cd6","address":"203.111.84.214","allocated":true}],"interfaces":[{"id":"90fbb8e4-8f2e-4fec-a669-cab005f9ff02","address":"203.111.84.194","network_id":"2d792bd2-1fbc-4ab5-8046-75a29d893a6f","instance_id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","created_at":"2013-05-21T00:40:28Z","public":true},{"id":"4620070d-4fc0-43b7-8efd-2b17c2837382","address":"203.111.84.214","network_id":"2d792bd2-1fbc-4ab5-8046-75a29d893a6f","instance_id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","created_at":"2013-03-22T02:43:36Z","public":true},{"id":"132d8505-3a02-489e-9553-71dad20e89c1","address":"203.111.84.13","network_id":"2d792bd2-1fbc-4ab5-8046-75a29d893a6f","instance_id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","created_at":"2013-03-22T02:36:56Z","public":true}],"key_pairs":[]}}
+			}
+		},
+		{
+			"name": "Detach Address From Instance",
+			"method": "DELETE",
+			"url": "/cloud/instances/:instance_id/addresses/:address_id",
+			"description": "Detach an address from an instance.",
+			"parameters": [
+				{
+					"name": "instance_id",
+					"description": "The ID you wish to detach from."
+				},
+				{
+					"name": "address_id",
+					"description": "The ID of the address you wish to detach"
+				}
+			],
+			"examples": {
+				"request": null,
+				"response": {"message":"address detached"}
+			}
+		}
+	]
+}

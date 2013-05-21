@@ -7,10 +7,19 @@ $(document).ready(function () {
 	var api_div = $("#api-all");
 
 	$.get("../../json/" + product + "/" + category + ".json", function(data) {
-		generate_api(JSON.parse(data));
+		o = JSON.parse(data);
+		generate_api(o);
 	});
 
 	function generate_api(data) {
+
+
+		/*
+
+		need to implement some kind of templating system later on
+		this is hacky.
+
+		*/
 
 		var endpoints = data['endpoints'];
 		var cls
@@ -32,14 +41,14 @@ $(document).ready(function () {
 			index_div.append(str);
 
 			str = '<div id="'+safe_name+'"  class="row '+cls+'">';
-			str += '<h4 class="route-name">'+ep.name+'</h4>';
+			str += '<h3 class="route-name">'+ep.name+'</h3>';
 			str += '<code class="endpoint">'+ep.method + " " + ep.url+'</code>';
 			str += '<h6>Description</h6><p class="detail">'+ep.description+'</p>';
 			str += '<h6>Parameters</h6><p class="detail">';
 			if (ep.parameters != null) {
 				str += '<table class="parameters">';
 				for (var j = 0; j < ep.parameters.length; j++) {
-					str += '<tr><td>'+ep.parameters[j].name+'</td><td>'+ep.parameters[j].description+'</td></tr>';
+					str += '<tr><td><code>'+ep.parameters[j].name+'</code></td><td>'+ep.parameters[j].description+'</td></tr>';
 				}
 				str += '</table>'
 			} else {

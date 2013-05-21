@@ -1,0 +1,63 @@
+{
+	"endpoints": [
+		{
+			"name": "List All Networks",
+			"method": "GET",
+			"url": "/cloud/networks",
+			"description": "Produces a list of all networks associated with the authenticated account.",
+			"parameters": null,
+			"examples": {
+				"request": null,
+				"response": {"networks":[{"id":"bd063536-d5ec-4018-85d5-69c2b456351c","interfaces":[{"id":"9831dac8-e246-447b-bc5a-c23ae037accb","address":"10.0.0.5","network_id":"bd063536-d5ec-4018-85d5-69c2b456351c","instance_id":"3b1ba9c4-66ec-4434-a62f-9957505fbb88","created_at":"2012-12-13T00:26:32Z","public":false}]}]}
+			}
+		},
+		{
+			"name": "Get Network",
+			"method": "GET",
+			"url": "/cloud/networks/:id",
+			"description": "Produces the details of a given network.",
+			"parameters": [
+				{
+					"name": "id",
+					"description": "The id of the network you wish to retrieve."
+				}
+			],
+			"examples": {
+				"request": null,
+				"response": {"network":{"id":"bd063536-d5ec-4018-85d5-69c2b456351c","interfaces":[{"id":"9831dac8-e246-447b-bc5a-c23ae037accb","address":"10.0.0.5","network_id":"bd063536-d5ec-4018-85d5-69c2b456351c","instance_id":"3b1ba9c4-66ec-4434-a62f-9957505fbb88","created_at":"2012-12-13T00:26:32Z","public":false}]}}
+			}
+		},
+		{
+			"name": "Delete Network",
+			"method": "DELETE",
+			"url": "/cloud/networks/:id",
+			"description": "Delete a given network.",
+			"parameters": [				
+				{
+					"name": "id",
+					"description": "The id of the network you wish to delete."
+				}
+			],
+			"examples": {
+				"request": null,
+				"response": {"message":"network deleted"}
+			}
+		},
+		{
+			"name": "Create Network",
+			"method": "POST",
+			"url": "/cloud/networks",
+			"description": "Create a new network",
+			"parameters": [
+				{
+					"name": "label",
+					"description": "The name of the new network"
+				}
+			],
+			"examples": {
+				"request": {"label":"example_network01"},
+				"response": {"message":"network created"}
+			}
+		}
+	]
+}
