@@ -7,9 +7,9 @@ $(document).ready(function () {
 	var api_div = $("#api-all");
 
 	$.get("../../json/" + product + "/" + category + ".json", function(data) {
+		console.log(data);
 		o = JSON.parse(data);
 		console.log(o);
-		console.log(data);
 		generate_api(o);
 	});
 
