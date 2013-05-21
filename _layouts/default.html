@@ -2,13 +2,36 @@
 <html lang="en">
 	<head>
 		<title>{% if page.title %} {{page.title}} | {% endif %}connect.com.au API documentation</title>
-		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="/css/flat-ui.css">
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
+
 		<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-		<script src="/js/jquery-1.8.2.min.js"></script>
-		<script src="/js/api_generate.js"></script>
-		<script src="/js/vkbeautify.0.99.00.beta.js"></script>
+
+		{% if page.is_root %}
+			<script src="./js/jquery-1.8.2.min.js"></script>
+			<script src="./js/api_generate.js"></script>
+			<script src="./js/vkbeautify.0.99.00.beta.js"></script>
+			<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+			<link rel="stylesheet" type="text/css" href="./css/flat-ui.css">
+			<link rel="stylesheet" type="text/css" href="./css/main.css">
+		{% endif %}
+
+		{% if page.is_product %}
+			<script src="../js/jquery-1.8.2.min.js"></script>
+			<script src="../js/api_generate.js"></script>
+			<script src="../js/vkbeautify.0.99.00.beta.js"></script>
+			<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+			<link rel="stylesheet" type="text/css" href="../css/flat-ui.css">
+			<link rel="stylesheet" type="text/css" href="../css/main.css">
+		{% endif %}
+
+		{% if page.is_category %}
+			<script src="../../js/jquery-1.8.2.min.js"></script>
+			<script src="../../js/api_generate.js"></script>
+			<script src="../../js/vkbeautify.0.99.00.beta.js"></script>
+			<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+			<link rel="stylesheet" type="text/css" href="../../css/flat-ui.css">
+			<link rel="stylesheet" type="text/css" href="../../css/main.css">
+		{% endif %}
+
 	</head>
 	<body>
 		<div class="navbar navbar-inverse navbar-static-top">
