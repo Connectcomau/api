@@ -72,6 +72,30 @@
 			}
 		},
 		{
+			"name": "Modify Instance",
+			"method": "PATCH",
+			"url": "/cloud/instances/:id",
+			"description": "Modify the details of an instance. The instance must be switched off.",
+			"parameters": [
+				{
+					"name": "id",
+					"description": "The id of target instance."
+				},
+				{
+					"name": "memory",
+					"description": "The new amount of RAM, as a multiple of 512 (optional)"
+				},
+				{
+					"name": "name",
+					"description": "The new hostname for the instance (optional)"
+				}
+			],
+			"examples": {
+				"request": {"name":"example_rename.server.com"},
+				"response": {"message":"instance modified","instance":{"instance":{"id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","memory":2048,"license":null,"name":"example_rename.server.com","state":"stopped","interface_ids":["4620070d-4fc0-43b7-8efd-2b17c2837382","132d8505-3a02-489e-9553-71dad20e89c1"],"key_pair_ids":[],"created_at":"2013-03-22T02:36:55Z","updated_at":"2013-05-21T01:51:44Z","volume_ids":["cd043d5f-514d-45fb-803d-84c01cc06e43"],"bootable":true,"volumes":[{"id":"cd043d5f-514d-45fb-803d-84c01cc06e43","name":"riak_ubuntu1204_546","target":0,"attach_type":"RW","state":"provisioned","instance_id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","mirror_count":2,"size":50,"created_at":"2013-03-22T02:36:55Z","updated_at":"2013-05-21T00:32:29Z","source":{"image":"ubuntu1204pvhvm","source_type":"TEMPLATE"}}],"addresses":[{"id":"18d062e0-99f2-44eb-8bae-1210b8c64cd6","address":"203.111.84.214","allocated":true}],"interfaces":[{"id":"4620070d-4fc0-43b7-8efd-2b17c2837382","address":"203.111.84.214","network_id":"2d792bd2-1fbc-4ab5-8046-75a29d893a6f","instance_id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","created_at":"2013-03-22T02:43:36Z","public":true},{"id":"132d8505-3a02-489e-9553-71dad20e89c1","address":"203.111.84.13","network_id":"2d792bd2-1fbc-4ab5-8046-75a29d893a6f","instance_id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","created_at":"2013-03-22T02:36:56Z","public":true}],"key_pairs":[]}}}
+			}
+		},
+		{
 			"name": "Start Instance",
 			"method": "POST",
 			"url": "/cloud/instances/:id/start",
