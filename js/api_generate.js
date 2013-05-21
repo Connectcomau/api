@@ -8,9 +8,7 @@ $(document).ready(function () {
 
 	$.get("../../json/" + product + "/" + category + ".json", function(data) {
 		console.log(data);
-		o = JSON.parse(data);
-		console.log(o);
-		generate_api(o);
+		generate_api(data);
 	});
 
 	function generate_api(data) {
