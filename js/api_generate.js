@@ -22,14 +22,7 @@ $(document).ready(function () {
 		*/
 
 		var endpoints = data['endpoints'];
-		var cls
-
 		for (var i = 0; i < endpoints.length; i++) {
-
-			cls = 'light-grey';
-			if (i % 2 == 0) {
-				cls = 'lighter-grey';
-			}
 
 			ep = endpoints[i];
 			safe_name = ep.name.replace(/ /g,'-')
@@ -40,7 +33,7 @@ $(document).ready(function () {
 			str += '<p>'+ep.description+'</p>';
 			index_div.append(str);
 
-			str = '<div id="'+safe_name+'"  class="row '+cls+'">';
+			str = '<div id="'+safe_name+'"  class="row lighter-grey">';
 			str += '<h3 class="route-name">'+ep.name+'</h3>';
 			str += '<code class="endpoint">'+ep.method + " " + ep.url+'</code>';
 			str += '<h6>Description</h6><p class="detail">'+ep.description+'</p>';
