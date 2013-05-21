@@ -172,7 +172,7 @@ code.parameter-name {
 }
 
 .striked {
-	text-decoration: line-through;
+	text-decoration: line-through !important;
 }
 
 /* override some of google code prettify formatting */
