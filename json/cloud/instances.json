@@ -3,18 +3,18 @@
 		{
 			"name": "List All Instances",
 			"method": "GET",
-			"url": "/cloud/instances",
+			"url": "/api/cloud/instances",
 			"description": "Produces a list of all instances associated with the authenticated account.",
 			"parameters": null,
 			"examples": {
 				"request": null,
-				"response": {"instances":[{"id":"3b1ba9c4-66ec-4434-a62f-9957505fbb88","memory":512,"license":null,"name":"test01.server.com","state":"stopped","interface_ids":["9831dac8-e246-447b-bc5a-c23ae037accb"],"key_pair_ids":[],"created_at":"2012-10-15T21:26:55Z","updated_at":"2013-05-20T00:58:03Z","volume_ids":["f77e1dbf-d15d-4b17-8128-5e29a0bd501b"],"bootable":true,"volumes":[{"id":"f77e1dbf-d15d-4b17-8128-5e29a0bd501b","name":"Janz_ubuntu1204_349","target":0,"attach_type":"RW","state":"provisioned","instance_id":"3b1ba9c4-66ec-4434-a62f-9957505fbb88","mirror_count":2,"size":50,"created_at":"2012-10-15T21:26:55Z","updated_at":"2012-10-15T21:28:07Z","source":{"image":"ubuntu1204pvhvm","source_type":"TEMPLATE"}}],"addresses":[],"interfaces":[{"id":"9831dac8-e246-447b-bc5a-c23ae037accb","address":"10.0.0.5","network_id":"bd063536-d5ec-4018-85d5-69c2b456351c","instance_id":"3b1ba9c4-66ec-4434-a62f-9957505fbb88","created_at":"2012-12-13T00:26:32Z","public":false}],"key_pairs":[]},{"id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","memory":1024,"license":null,"name":"test00.server.com","state":"stopped","interface_ids":["4620070d-4fc0-43b7-8efd-2b17c2837382","132d8505-3a02-489e-9553-71dad20e89c1"],"key_pair_ids":[],"created_at":"2013-03-22T02:36:55Z","updated_at":"2013-05-20T00:58:11Z","volume_ids":["cd043d5f-514d-45fb-803d-84c01cc06e43"],"bootable":true,"volumes":[{"id":"cd043d5f-514d-45fb-803d-84c01cc06e43","name":"riak_ubuntu1204_546","target":0,"attach_type":"RW","state":"provisioned","instance_id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","mirror_count":2,"size":50,"created_at":"2013-03-22T02:36:55Z","updated_at":"2013-03-22T02:40:04Z","source":{"image":"ubuntu1204pvhvm","source_type":"TEMPLATE"}}],"addresses":[{"id":"18d062e0-99f2-44eb-8bae-1210b8c64cd6","address":"203.111.84.214","allocated":true}],"interfaces":[{"id":"4620070d-4fc0-43b7-8efd-2b17c2837382","address":"203.111.84.214","network_id":"2d792bd2-1fbc-4ab5-8046-75a29d893a6f","instance_id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","created_at":"2013-03-22T02:43:36Z","public":true},{"id":"132d8505-3a02-489e-9553-71dad20e89c1","address":"203.111.84.13","network_id":"2d792bd2-1fbc-4ab5-8046-75a29d893a6f","instance_id":"e571b408-e4be-4c69-a5bb-7f7af1fd6e1b","created_at":"2013-03-22T02:36:56Z","public":true}],"key_pairs":[]}]}
+				"response": [{"id":"51c7f1b9be8ad4510100003d","name":"bqqq","hostname":"bqqq","ram":1024,"status":"off","bootable":true,"notes":null,"created_at":"2013-06-24T07:14:01.000Z","updated_at":"2013-06-26T06:28:31.568Z","nameservers":["8.8.8.8","8.8.4.4"],"boot_volume":{"id":"51c7f1b9be8ad4510100003b","name":"bqqq_centos6_269","size":50,"template":"centos6","status":"provisioned","instance_id":"51c7f1b9be8ad4510100003d","created_at":"2013-06-24T07:14:01.000Z","updated_at":"2013-06-24T07:14:01.504Z"},"volumes":[],"addresses":[],"ssh_keys":[],"networks":[]},{"id":"51c85e517da497133f00001b","name":"yahoo","hostname":"yip.yip","ram":1024,"status":"off","bootable":false,"notes":null,"created_at":"2013-06-24T14:57:21.000Z","updated_at":"2013-06-24T14:57:21.000Z","nameservers":["8.8.8.8","8.8.4.4"],"boot_volume":null,"volumes":[],"addresses":[],"ssh_keys":[],"networks":[]}]
 			}
 		},
 		{
 			"name": "Get Instance",
 			"method": "GET",
-			"url": "/cloud/instances/:id",
+			"url": "/api/cloud/instances/:id",
 			"description": "Produces the details associated with a given instance ID.",
 			"parameters": [
 				{
@@ -24,7 +24,7 @@
 			],
 			"examples": {
 				"request": null,
-				"response": {"instance":{"id":"3b1ba9c4-66ec-4434-a62f-9957505fbb88","memory":512,"license":null,"name":"test01.server.com","state":"stopped","interface_ids":["9831dac8-e246-447b-bc5a-c23ae037accb"],"key_pair_ids":[],"created_at":"2012-10-15T21:26:55Z","updated_at":"2013-05-20T00:58:03Z","volume_ids":["f77e1dbf-d15d-4b17-8128-5e29a0bd501b"],"bootable":true,"volumes":[{"id":"f77e1dbf-d15d-4b17-8128-5e29a0bd501b","name":"Janz_ubuntu1204_349","target":0,"attach_type":"RW","state":"provisioned","instance_id":"3b1ba9c4-66ec-4434-a62f-9957505fbb88","mirror_count":2,"size":50,"created_at":"2012-10-15T21:26:55Z","updated_at":"2012-10-15T21:28:07Z","source":{"image":"ubuntu1204pvhvm","source_type":"TEMPLATE"}}],"addresses":[],"interfaces":[{"id":"9831dac8-e246-447b-bc5a-c23ae037accb","address":"10.0.0.5","network_id":"bd063536-d5ec-4018-85d5-69c2b456351c","instance_id":"3b1ba9c4-66ec-4434-a62f-9957505fbb88","created_at":"2012-12-13T00:26:32Z","public":false}],"key_pairs":[]}}
+				"response": {"id":"51c7f1b9be8ad4510100003d","name":"bqqq","hostname":"bqqq","ram":1024,"status":"off","bootable":true,"notes":null,"created_at":"2013-06-24T07:14:01.000Z","updated_at":"2013-06-26T06:28:31.568Z","nameservers":["8.8.8.8","8.8.4.4"],"boot_volume":{"id":"51c7f1b9be8ad4510100003b","name":"bqqq_centos6_269","size":50,"template":"centos6","status":"provisioned","instance_id":"51c7f1b9be8ad4510100003d","created_at":"2013-06-24T07:14:01.000Z","updated_at":"2013-06-24T07:14:01.504Z"},"volumes":[],"addresses":[],"ssh_keys":[],"networks":[]}
 			}
 		},
 		{
