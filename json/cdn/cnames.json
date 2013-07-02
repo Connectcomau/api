@@ -1,0 +1,26 @@
+{
+	"endpoints": [
+		{
+			"name": "New Cname",
+			"method": "GET",
+			"url": "/cdn/cname",
+			"description": "Creates a new cname for an origin. Used to mask the connect.com.au CDN URL with your own.",
+			"parameters": null,
+			"examples": {
+				"request": {"MediaTypeId":8,"DirPath":"/examplepath","Name":"test.example-cname.com","OriginId":123456},
+				"response": null
+			}
+		},
+		{
+			"name": "Delete Cname",
+			"method": "GET",
+			"url": "/cdn/cname/:id",
+			"description": "Dissociates a cname from an existing origin.",
+			"parameters": null,
+			"examples": {
+				"request": null,
+				"response": null
+			}
+		}
+	]
+}
