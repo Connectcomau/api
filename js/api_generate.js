@@ -19,6 +19,8 @@ $(document).ready(function () {
 		need to implement some kind of templating system later on
 		this is hacky.
 
+		would use jekyll asset-pipeline but not sure if github pages will support it
+
 		*/
 
 		var endpoints = data['endpoints'];

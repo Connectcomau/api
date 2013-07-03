@@ -1,0 +1,102 @@
+{
+	"endpoints": [
+		{
+			"name": "Create Content",
+			"method": "POST",
+			"url": "/cdn/origin",
+			"description": "Creates a new content.",
+			"parameters": [
+				{"name":"originSize", "description":"The content size. \"httpsmall\" or \"httplarge.\""},
+				{"name": "directoryName", "description": "The content name."},
+				{"name": "hostNames", "description": "An array of source hostnames from which the content will load from. No more than 10."},
+				{"name": "hostHeader", "description": "The value of the host header will be sent in requests to source servers specified by hostNames."},
+				{"name": "loadBalancing", "description": "Load balancing configuration. PF for Primary/Failover, RR for Round Robin"}
+			],
+			"examples": {
+				"request": {"originSize":"httpsmall","directoryName":"example1","hostNames":[{"Name":"http://example-source.com"}],"hostHeader":"example.com","loadBalancing":"PF"},
+				"response": null
+			}
+		},
+		{
+			"name": "Edit Content",
+			"method": "PUT",
+			"url": "/cdn/origin/:id",
+			"description": "Updates a specified content.",
+			"parameters": [
+				{"name":"originSize", "description":"The content size. \"httpsmall\" or \"httplarge.\""},
+				{"name": "directoryName", "description": "The content name."},
+				{"name": "hostNames", "description": "An array of source hostnames from which the content will load from. No more than 10."},
+				{"name": "hostHeader", "description": "The value of the host header will be sent in requests to source servers specified by hostNames."},
+				{"name": "loadBalancing", "description": "Load balancing configuration. PF for Primary/Failover, RR for Round Robin"},
+				{"name": "Id", "description": "The ID of the content. (readonly)"}
+			],
+			"examples": {
+				"request": {
+					"originSize":"httpsmall",
+					"directoryName":"connectcomau",
+					"hostNames":[
+					{ "Name":"http://example-source-1.com:80" },
+						{ "Name":"http://example-source-2.com:80" }
+					],
+					"hostHeader":"example-host-header.com",
+					"loadBalancing":"PF",
+					"Id":123456
+				},
+				"response": null
+			}
+		},
+		{
+			"name": "Delete Content",
+			"method": "DELETE",
+			"url": "/cdn/origin/:id",
+			"description": "Deletes a specified content.",
+			"parameters": [
+				{"name":"id", "description":"The id of the content you wish to delete."}
+			],
+			"examples": {
+				"request": null,
+				"response": null
+			}
+		},
+		{
+			"name": "Purge Content",
+			"method": "PUT",
+			"url": "/cdn/origin",
+			"description": "Removes files from the cache of our CDN POPs. Purge time varies depending on load.",
+			"parameters": [
+				{
+					"name":"path",
+					"description":"The full URL of the file you wish to purge. You may include a wildcard '*' to purge folders recursively or for partial matching."
+				},
+				{
+					"name":"size",
+					"description":"The 'size' of the content. 8 for Small, 3 for Large."
+				}
+			],
+			"examples": {
+				"request": {"path":"http://small-1234.connectcdn.com.au/801234/connect/example.html","size":8},
+				"response": null
+			}
+		},
+		{
+			"name": "Reload Content",
+			"method": "PUT",
+			"url": "/cdn/origin",
+			"description": "Forces files to be loaded into the cache of our CDN POPs. Reload time varies depending on load.",
+			"parameters": [
+				{
+					"name":"path",
+					"description":"The full URL of the file you wish to load. Folders cannot be loaded."
+				},
+				{
+					"name":"size",
+					"description":"The 'size' of the content. 8 for Small, 3 for Large."
+				}
+			],
+			"examples": {
+				"request": {"path":"http://small-9253.connectcdn.com.au/809253/connectcomau/example","size":8},
+				"response": null
+			}
+		}
+	]
+}
