@@ -41,7 +41,7 @@ $(document).ready(function () {
 			str += '<code class="endpoint">'+ep.method + " " + ep.url+'</code>';
 			str += '<h6>Description</h6><p class="detail">'+ep.description+'</p>';
 			str += '<h6>Parameters</h6><p class="detail">';
-			if ( ! ep.parameters) {
+			if (ep.parameters) {
 				str += '<table class="parameters">';
 				for (var j = 0; j < ep.parameters.length; j++) {
 					str += '<tr><td><code>'+ep.parameters[j].name+'</code></td><td>'+ep.parameters[j].description+'</td></tr>';
@@ -54,7 +54,7 @@ $(document).ready(function () {
 
 			str += '<div class="code-header request"><h4>Example Request Body</h4></div>';
 			str += '<pre class="json-block prettyprint linenums">';
-			if ( ! ep.examples.request) {
+			if (ep.examples.request) {
 				str += vkbeautify.json(JSON.stringify(ep.examples.request));
 			} else {
 				str += '(none)';
@@ -62,7 +62,7 @@ $(document).ready(function () {
 			str += '</pre>';
 			str += '<div class="code-header response"><h4>Example Response Body</h4></div>';
 			str += '<pre class="json-block prettyprint linenums">';
-			if ( ! ep.examples.response) {
+			if (ep.examples.response) {
 				str += vkbeautify.json(JSON.stringify(ep.examples.response));
 			} else {
 				str += '(none)';
